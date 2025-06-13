@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 offset-md-3">
+            <h1>Информационная лента</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row justify-content-center blog-content">
+        <div class="col-md-2">
+            {% for page in section.pages %}
+            <p class="subtitle mb-4 d-none d-sm-none d-md-block">
+                <strong>{{ page.date }} </strong><br/>
+                <a href="#{{ page.slug }}">{{ page.title }}</a>
+            </p>
+            {% endfor %}
+        </div>
+        <div class="col-md-8 offset-md-1">
+            {% for page in section.pages %}
+            <span>
+                <strong>{{ page.date }} </strong><a href="{{ page.permalink | safe }}"><i class="bi bi-link"></i></a>
+            </span>
+            <h3 id="{{ page.slug }}">{{ page.title }}</h3>
+            <p>{{ page.content | safe }}</p>
+            <hr class="pb-3">
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+.logo {
+    max-width: 100%;
+}
+
+.blog-content img {
+    max-width: 100%;
+}
+
+.blog-content video {
+    max-width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
