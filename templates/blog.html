@@ -12,7 +12,7 @@
         <div class="col-md-2">
             {% for page in section.pages %}
             <p class="subtitle mb-4 d-none d-sm-none d-md-block">
-                <strong>{{ page.date }} </strong><br/>
+                <strong><time datetime="{{ page.date }}">{{ page.date }} </time></strong><br/>
                 <a href="#{{ page.slug }}">{{ page.title }}</a>
             </p>
             {% endfor %}
@@ -20,7 +20,10 @@
         <div class="col-md-8 offset-md-1">
             {% for page in section.pages %}
             <span>
-                <strong>{{ page.date }} </strong><a href="{{ page.permalink | safe }}"><i class="bi bi-link"></i></a>
+                <strong>
+                    <time datetime="{{ page.date }}">{{ page.date }} </time>
+                </strong>
+                <a href="{{ page.permalink | safe }}"><i class="bi bi-link"></i></a>
             </span>
             <h3 id="{{ page.slug }}">{{ page.title }}</h3>
             <p>{{ page.content | safe }}</p>
