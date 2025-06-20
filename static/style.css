@@ -10,6 +10,10 @@
     max-width: 100%;
 }
 
+.blog-feed p.pt-5:first-child {
+    padding-top: 0 !important;
+}
+
 .pointer {
     cursor: pointer;
 }

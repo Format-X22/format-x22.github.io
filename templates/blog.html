@@ -2,32 +2,37 @@
 
 {% block content %}
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 offset-md-3">
+    <div class="row justify-content-center d-none d-sm-none d-md-flex">
+        <div class="col-md-2 d-flex align-items-center">
+            <h4>Навигация</h4>
+        </div>
+        <div class="col-md-8 offset-md-1">
             <h1>Информационная лента</h1>
             <hr>
         </div>
     </div>
     <div class="row justify-content-center blog-content">
-        <div class="col-md-2">
+        <nav class="col-md-2">
             {% for page in section.pages %}
             <p class="subtitle mb-4 d-none d-sm-none d-md-block">
                 <strong><time datetime="{{ page.date }}">{{ page.date }} </time></strong><br/>
                 <a href="#{{ page.slug }}">{{ page.title }}</a>
             </p>
             {% endfor %}
-        </div>
-        <div class="col-md-8 offset-md-1">
+        </nav>
+        <div class="col-md-8 offset-md-1 blog-feed">
             {% for page in section.pages %}
-            <span>
-                <strong>
-                    <time datetime="{{ page.date }}">{{ page.date }} </time>
-                </strong>
-                <a href="{{ page.permalink | safe }}"><i class="bi bi-link"></i></a>
-            </span>
-            <h3 id="{{ page.slug }}">{{ page.title }}</h3>
-            <p>{{ page.content | safe }}</p>
-            <hr class="pb-5">
+            <p id="{{ page.slug }}" class="pt-5">
+                <span>
+                    <strong>
+                        <time datetime="{{ page.date }}">{{ page.date }} </time>
+                    </strong>
+                    <a href="{{ page.permalink | safe }}"><i class="bi bi-link"></i></a>
+                </span>
+                <h3>{{ page.title }}</h3>
+                <p>{{ page.content | safe }}</p>
+            </p>
+            <hr>
             {% endfor %}
         </div>
     </div>
