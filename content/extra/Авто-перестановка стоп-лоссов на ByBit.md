@@ -32,6 +32,6 @@ weight = 1
 ---
 
 <div class="d-flex align-items-center">
-    <p><i class="bi bi-check-circle h1 me-4"></i></p>
+    <p class="me-4"><i class="bi bi-check-circle h1"></i></p>
     <p class="text-success-emphasis h6">Вот таким хитрым образом под гарантией исполнения от биржи мы спокойно можем передвигать стопы и не беспокоится о том как там сейчас на рынке.</p>
 </div>
